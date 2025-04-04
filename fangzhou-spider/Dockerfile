@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 复制 requirements 文件先执行，利用 Docker 缓存优化
-COPY requirements.txt .
+COPY ./requirements.txt .
 
 # 安装 Python 依赖（包含 Scrapy、pymongo 和词云库）
 RUN pip install --no-cache-dir -r requirements.txt
