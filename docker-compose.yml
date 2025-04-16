@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: scrapy_container
     volumes:
-      - $HOME/v2/logs/scrapy:/app/logs
+      - $HOME/fangzhou/logs/scrapy:/app/logs
     environment:
       - TZ=Asia/Shanghai
     depends_on:
@@ -23,7 +23,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - $HOME/v2/mongodb/data:/data/db
+      - $HOME/fangzhou/mongodb/data:/data/db
     networks:
       - fangzhou_network
     healthcheck:
