@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 COPY ./requirements.txt .
 
 # 安装 Python 依赖（包含 Scrapy、pymongo 和词云库）
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
 
 # 复制整个项目到容器中（注意 .dockerignore 需要排除不必要的文件）
 COPY . .
